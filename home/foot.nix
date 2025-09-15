@@ -1,0 +1,41 @@
+{...}:
+
+{
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        app-id = "foot";
+        title = "foot";
+        locked-title = "no";
+        font = "Terminess Nerd Font Mono:size=13";
+        "dpi-aware" = "yes";
+        pad = "20x20";
+      };
+      cursor = {
+        style = "beam";
+        "beam-thickness" = 1.5;
+      };
+      colors = {
+        background = "151515";
+        foreground = "E8E3E3";
+        regular0 = "151515";  # black
+        regular1 = "B66467";  # red
+        regular2 = "8C977D";  # green
+        regular3 = "D9BC8C";  # yellow
+        regular4 = "8DA3B9";  # blue
+        regular5 = "A988B0";  # magenta
+        regular6 = "8AA6A2";  # cyan
+        regular7 = "E8E3E3";  # white
+        bright0 = "424242";   # bright black
+        bright1 = "B66467";   # bright red
+        bright2 = "8C977D";   # bright green
+        bright3 = "D9BC8C";   # bright yellow
+        bright4 = "8DA3B9";   # bright blue
+        bright5 = "A988B0";   # bright magenta
+        bright6 = "8AA6A2";   # bright cyan
+        bright7 = "E8E3E3";   # bright white
+      };
+    };
+  };
+}
