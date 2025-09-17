@@ -40,7 +40,6 @@
     wbg
     pavucontrol
 
-    anki
     obsidian
 
     krita
@@ -62,6 +61,7 @@
     # '';
   };
   
+  programs.fish.enable = true;
   home.shell.enableFishIntegration = true;
 
   programs.firefox = {
@@ -78,9 +78,31 @@
     };
   };
 
+  programs.anki = {
+    enable = true;
+    addons = [
+      pkgs.ankiAddons.recolor
+      pkgs.ankiAddons.review-heatmap
+      pkgs.ankiAddons.adjust-sound-volume
+    ];
+  };
+   
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+  };
+
   programs.git = {
     enable = true;
+    userName = "0gnjen01";
     userEmail = "ognjenk0l3@gmail.com";
+    signing = {
+      key = "home/ignis/.shh/id_ed25519.pub";
+      signByDefault = true;
+    };
+    extraConfig = {
+      gpg.format = "ssh";
+    };
   };  
  
   # Home Manager can also manage your environment variables through

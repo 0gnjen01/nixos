@@ -11,12 +11,12 @@
       modules = [
         {
           key = "{$1}Distro";
-          keyColor = "38;5;210";
+          keyColor = "182;100;103";
           type = "os";
         }
         {
           key = "{$1}Kernel";
-          keyColor = "38;5;84";
+          keyColor = "140;151;125";
           type = "kernel";
         }
         {
@@ -26,22 +26,22 @@
         }
         {
           key = "{$1}Packages";
-          keyColor = "38;5;200";
+          keyColor = "169;136;176";
           type = "packages";
         }
         {
           key = "{$1}WM";
-          keyColor = "38;5;44";
+          keyColor = "141;163;185";
           type = "wm";
         }
         {
           key = "{$1}CPU";
-          keyColor = "38;5;75";
+          keyColor = "141;163;185";
           type = "cpu";
         }
         {
           key = "{$1}GPU";
-          keyColor = "38;5;123";
+          keyColor = "217;188;140";
           type = "gpu";
         }
       ];

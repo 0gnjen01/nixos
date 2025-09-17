@@ -35,6 +35,8 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  system.autoUpgrade.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -104,7 +106,7 @@
     protontricks.enable = true;
   };
  
-  programs.river.enable = true;
+  programs.river-classic.enable = true;
 
   xdg.portal = {
     enable = true;
