@@ -89,7 +89,7 @@
       spawn = [
         "'( while date; do sleep 1; done ) | creek -fn Terminus:size=12 -nf 0xffffff -nb 0x151515 -ff 0x151515 -fb 0x8DA3B9'"
         "'wlr-randr --output HDMI-A-1 --mode 1920x1080@143.981003Hz'"
-        "'wbg Downloads/wallpaper.png'"  
+        "'wbg Pictures/wallpaper.png'"  
       ];
     };  
     extraConfig = ''

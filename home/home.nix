@@ -24,6 +24,7 @@
     ./mako.nix
     ./river.nix
     ./fastfetch.nix
+    ./zathura.nix
   ];
 
   home.packages = with pkgs; [
@@ -70,26 +71,19 @@
 
   programs.vesktop = {
     enable = true;
-    settings = {
-      minimizeToTray = false;
-      arRPC = true;
-      discordBranch = "canary";
-      hardwareAcceleration = true;
-    };
   };
 
   programs.anki = {
     enable = true;
     addons = [
-      pkgs.ankiAddons.recolor
       pkgs.ankiAddons.review-heatmap
       pkgs.ankiAddons.adjust-sound-volume
     ];
   };
-   
+
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    matchBlocks.ignis.addKeysToAgent = "yes";
   };
 
   programs.git = {
@@ -97,7 +91,7 @@
     userName = "0gnjen01";
     userEmail = "ognjenk0l3@gmail.com";
     signing = {
-      key = "home/ignis/.shh/id_ed25519.pub";
+      key = "/home/ignis/.ssh/id_ed25519.pub";
       signByDefault = true;
     };
     extraConfig = {
