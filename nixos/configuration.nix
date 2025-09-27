@@ -44,19 +44,22 @@
   };
 
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    wireplumber.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+
+  services = {
+      pipewire = {
+        enable = true;
+        wireplumber.enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+      };
+
+      playerctld.enable = true;
+
+      displayManager.ly.enable = true;
+
+      flatpak.enable = true;
   };
-
-  services.playerctld.enable = true;
-
-  services.displayManager.ly.enable = true;
-  
-  services.flatpak.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ignis = {
@@ -85,33 +88,22 @@
     nerd-fonts.terminess-ttf
   ];
 
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/ignis/flake"; # sets NH_OS_FLAKE variable for you
-  };
+  programs = {
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/ignis/flake"; # sets NH_OS_FLAKE variable for you
+    };
 
-  programs.fish = {
-    enable = true;
-  };
+    river-classic.enable = true;
+    steam.enable = true;
 
-  programs.git = {
-    enable = true;
-  };  
-
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-    protontricks.enable = true;
-  };
+    };
  
-  programs.river-classic.enable = true;
-
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    configPackages = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
     wlr = {
       enable = true;
       settings.screencast = {

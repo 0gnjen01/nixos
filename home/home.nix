@@ -24,7 +24,6 @@
     ./mako.nix
     ./river.nix
     ./fastfetch.nix
-    ./zathura.nix
   ];
 
   home.packages = with pkgs; [
@@ -42,7 +41,10 @@
     pavucontrol
 
     obsidian
+    zathura
+    pcmanfm
 
+    youtube-music
     krita
     prismlauncher
   ];
@@ -80,6 +82,8 @@
       pkgs.ankiAddons.adjust-sound-volume
     ];
   };
+
+  programs.translate-shell.enable = true;
 
   programs.ssh = {
     enable = true;
