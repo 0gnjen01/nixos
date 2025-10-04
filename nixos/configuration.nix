@@ -8,6 +8,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./nvidia.nix
+      ./virtualization.nix
     ];
 
   # Bootloader.
@@ -43,7 +44,9 @@
     variant = "";
   };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+  };
 
   services = {
       pipewire = {
@@ -80,6 +83,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     libnotify
+    qemu
     inputs.self.packages.${pkgs.stdenv.system}.default 
   ];  
 
@@ -98,9 +102,8 @@
 
     river-classic.enable = true;
     steam.enable = true;
-
     };
- 
+
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;

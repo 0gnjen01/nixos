@@ -44,6 +44,9 @@
     zathura
     pcmanfm
 
+    qemu
+    libvirt
+
     youtube-music
     krita
     prismlauncher
