@@ -3,15 +3,9 @@
 {
   vim = {
 
-    clipboard.providers.wl-copy.enable = true;            
-    vimAlias = true;
-    lsp.enable = true;
-
     statusline.lualine.enable = true;
     telescope.enable = true;
-    autocomplete.nvim-cmp.enable = true;
-
-    ui.colorizer.enable = true;
+    autocomplete.blink-cmp.enable = true;
 
     languages = {
       enableTreesitter = true;
@@ -21,13 +15,19 @@
         lsp.enable = true;
       };   
     };
+
     options = {
       autoindent = true;
       shiftwidth = 2;
     };
+
     extraPlugins = {
       lackluster = {
         package = pkgs.vimPlugins.lackluster-nvim;
+        setup = ''
+          require('lackluster').setup{}
+          vim.cmd.colorscheme("lackluster-hack")
+        '';
       };
     };
   };

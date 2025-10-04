@@ -11,14 +11,6 @@
         "normal"
         "passthrough"
       ];
-      input = {
-        pointer-foo-bar = {
-          accel-profile = "flat";
-          events = true;
-          pointer-accel = -0.3;
-          tap = false;
-        };
-      };
       map = {
         normal = {
           # Super+Q to close the focused view      
@@ -27,8 +19,9 @@
           "Super Q" = "spawn foot";
           "Super R" = "spawn fuzzel";
           "Super A" = "spawn firefox";
-          "Super C" = "spawn ' grimshot copy area ' ";
-          "Super+Shit+C" = "spawn ' grimshot copy screen ' ";
+          "Super D" = "spawn vesktop";
+          "Super C" = " spawn 'grim -g \"\$(slurp)\" - | wl-copy' ";
+          "Super+Shift+C" = " spawn 'grim - | wl-copy' ";
           # Super+Shift+E to exit river      
           "Super+Shift M" = "exit";
           # Super+J and Super+K to focus the next/previous view in the layout stack     
@@ -78,7 +71,7 @@
           "Super F11" = "enter-mode normal";
         };
       };
-       "map-pointer" = {
+       map-pointer = {
           normal = {
             "Super BTN_LEFT" = "move-view";
             "Super BTN_RIGHT" = "resize-view";
@@ -87,9 +80,8 @@
        };
       # Startup                  
       spawn = [
-        "'( while date; do sleep 1; done ) | creek -fn Terminus:size=12 -nf 0xffffff -nb 0x151515 -ff 0x151515 -fb 0x8DA3B9'"
-        "'wlr-randr --output HDMI-A-1 --mode 1920x1080@143.981003Hz'"
-        "'wbg Pictures/wallpaper.png'" 
+        "kanshi"
+        "'wbg Pictures/wallpaper.png'"
       ];
     };  
     extraConfig = ''
@@ -100,7 +92,7 @@
               
         # Default layout
         riverctl default-layout rivertile      
-        rivertile -view-padding 6 -outer-padding 6 &
+        rivertile -view-padding 0 -outer-padding 0 &
         riverctl attach-mode bottom
 
         # Tag mappings (1-9)

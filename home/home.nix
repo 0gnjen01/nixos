@@ -19,38 +19,14 @@
   # environment.
 
   imports = [
-    ./fuzzel.nix
+    ./packages.nix
     ./foot.nix
+    ./fuzzel.nix
     ./mako.nix
     ./river.nix
     ./fastfetch.nix
   ];
 
-  home.packages = with pkgs; [
-    cowsay
-    cava
-    btop
-    yazi
-
-    foot
-    creek
-    sway-contrib.grimshot
-    wl-clipboard
-    wlr-randr 
-    wbg
-    pavucontrol
-
-    obsidian
-    zathura
-    pcmanfm
-
-    qemu
-    libvirt
-
-    youtube-music
-    krita
-    prismlauncher
-  ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -66,46 +42,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  
-  programs.fish.enable = true;
-  home.shell.enableFishIntegration = true;
 
-  programs.firefox = {
-    enable = true;
-  };
-
-  programs.vesktop = {
-    enable = true;
-  };
-
-  programs.anki = {
-    enable = true;
-    addons = [
-      pkgs.ankiAddons.review-heatmap
-      pkgs.ankiAddons.adjust-sound-volume
-    ];
-  };
-
-  programs.translate-shell.enable = true;
-
-  programs.ssh = {
-    enable = true;
-    matchBlocks.ignis.addKeysToAgent = "yes";
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "0gnjen01";
-    userEmail = "ognjenk0l3@gmail.com";
-    signing = {
-      key = "/home/ignis/.ssh/id_ed25519.pub";
-      signByDefault = true;
-    };
-    extraConfig = {
-      gpg.format = "ssh";
-    };
-  };  
- 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -128,5 +65,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-}
 
+  # Nicely reload system units when changing configs
+  systemd.user.startServices = "sd-switch";
+}
