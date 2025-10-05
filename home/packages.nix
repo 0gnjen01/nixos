@@ -13,7 +13,7 @@
   ];
 
   services = {
-      kanshi = {
+    kanshi = {
       enable = true;
       settings = [
         { profile.name = "default";
@@ -39,10 +39,6 @@
 
   programs = {
     fish = {
-      enable = true;
-    };
-
-    firefox = {
       enable = true;
     };
 

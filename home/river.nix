@@ -2,8 +2,13 @@
 {
   wayland.windowManager.river = {
     enable = true;
-    systemd.enable = true;
-    xwayland.enable = true;
+    systemd = {
+      enable = true;
+      extraCommands = [
+        "systemctl --user import-environment PATH"
+        "systemctl --user restart xdg-desktop-portal.service"
+      ];
+    };
     settings = {
       border-width = 2;
       declare-mode = [
@@ -81,7 +86,7 @@
       # Startup                  
       spawn = [
         "kanshi"
-        "'wbg Pictures/wallpaper.png'"
+        "wpaperd"
       ];
     };  
     extraConfig = ''
