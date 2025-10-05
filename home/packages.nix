@@ -2,6 +2,9 @@
 
 {
   home.packages = with pkgs; [
+
+    cava
+
     grim
     slurp
 
@@ -54,7 +57,11 @@
       ];
     };
 
-    translate-shell = {
+    obsidian = {
+      enable = true;
+    };
+
+    zathura = {
       enable = true;
     };
 
@@ -63,7 +70,7 @@
       plugins = {
         inherit (pkgs.yaziPlugins) sudo git lazygit chmod recycle-bin wl-clipboard full-border;
       };
-    };
+    }; 
 
     ssh = {
       enable = true;
@@ -94,11 +101,7 @@
       };
     };
 
-    obsidian = {
-      enable = true;
-    };
-
-    zathura = {
+    translate-shell = {
       enable = true;
     };
   };
