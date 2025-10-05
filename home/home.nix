@@ -24,7 +24,7 @@
     ./fuzzel.nix
     ./mako.nix
     ./river.nix
-    ./firefox.nix
+    ./firefox/firefox.nix
     ./fastfetch.nix
   ];
 

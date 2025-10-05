@@ -26,7 +26,7 @@
           "Super A" = "spawn firefox";
           "Super D" = "spawn vesktop";
           "Super C" = " spawn 'grim -g \"\$(slurp)\" - | wl-copy' ";
-          "Super+Shift+C" = " spawn 'grim - | wl-copy' ";
+          "Super+Shift C" = " spawn 'wf-recorder -g \"\$(slurp)\" ' ";
           # Super+Shift+E to exit river      
           "Super+Shift M" = "exit";
           # Super+J and Super+K to focus the next/previous view in the layout stack     

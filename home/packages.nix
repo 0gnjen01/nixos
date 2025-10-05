@@ -7,6 +7,7 @@
 
     wl-clipboard-rs
     wl-clip-persist
+    wf-recorder
 
     prismlauncher
     krita
