@@ -4,7 +4,8 @@
   home.packages = with pkgs; [
 
     cava
-
+    
+    waylock
     grim
     slurp
 
@@ -39,6 +40,22 @@
         };
       };
     };
+    hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          ignore_dbus_inhibit = true;
+          lock_cmd = "waylock";
+          };
+
+        listener = [
+          {
+          timeout = 300;
+          on-timeout = "loginctl lock-session";
+          }
+        ];
+      };
+    };
   };
 
   programs = {
@@ -70,7 +87,15 @@
       plugins = {
         inherit (pkgs.yaziPlugins) sudo git lazygit chmod recycle-bin wl-clipboard full-border;
       };
-    }; 
+    };
+
+    feh = {
+      enable = true;
+    };
+
+    mpv = {
+      enable = true;
+    };
 
     ssh = {
       enable = true;
