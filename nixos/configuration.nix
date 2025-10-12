@@ -81,6 +81,9 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     libnotify
+    mangohud
+    protonup
+    rtorrent
     inputs.self.packages.${pkgs.stdenv.system}.default 
   ];  
 
@@ -97,27 +100,39 @@
       flake = "/home/ignis/flake"; # sets NH_OS_FLAKE variable for you
     };
 
-    river-classic.enable = true;
-    steam.enable = true;
+    river-classic = {
+      enable = true;
     };
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    wlr = {
+    steam = {
       enable = true;
-      settings.screencast = {
-        output_name = "HDMI-A-1";
-        chooser_type = "simple";
-        chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
-	};
+      gamescopeSession.enable = true;
     };
-    config = {
-      common = {
-        default = ["wlr"];
+
+    gamemode = {
+      enable = true;
+    };
+  };
+
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      wlr = {
+        enable = true;
+        settings.screencast = {
+          output_name = "HDMI-A-1";
+          chooser_type = "simple";
+          chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
+          };
       };
-      river = {
-        default = ["wlr"];
+      config = {
+        common = {
+          default = ["wlr"];
+        };
+        river = {
+          default = ["wlr"];
+        };
       };
     };
   };

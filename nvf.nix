@@ -4,15 +4,17 @@
   vim = {
 
     statusline.lualine.enable = true;
+
     telescope.enable = true;
+
     autocomplete.blink-cmp.enable = true;
 
     languages = {
       enableTreesitter = true;
       nix = {
         enable = true;
-        format.enable =  true;
-        lsp.enable = true;
+        treesitter.enable = true;
+        format.enable = true;
       };   
     };
 

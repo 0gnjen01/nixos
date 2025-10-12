@@ -4,10 +4,6 @@
     enable = true;
     systemd = {
       enable = true;
-      extraCommands = [
-        "systemctl --user import-environment PATH"
-        "systemctl --user restart xdg-desktop-portal.service"
-      ];
     };
     settings = {
       border-width = 2;

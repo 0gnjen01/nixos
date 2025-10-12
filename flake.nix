@@ -32,6 +32,7 @@
 	    useUserPackages = true;
 	    users.ignis = import ./home/home.nix;
 	    extraSpecialArgs = {inherit inputs;};
+            backupFileExtension = "backup";
 	  };
 	}
       ];

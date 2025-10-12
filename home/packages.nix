@@ -13,6 +13,7 @@
     wl-clip-persist
     wf-recorder
 
+    mindustry
     prismlauncher
     krita
   ];
@@ -129,5 +130,9 @@
     translate-shell = {
       enable = true;
     };
+  };
+
+  xdg = {
+    mimeApps.enable = true;
   };
 }
