@@ -104,6 +104,10 @@
       enable = true;
     };
 
+    niri = {
+      enable = true;
+    };
+
     steam = {
       enable = true;
       gamescopeSession.enable = true;

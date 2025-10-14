@@ -105,8 +105,6 @@
 
     git = {
       enable = true;
-      userName = "0gnjen01";
-      userEmail = "ognjenk0l3@gmail.com";
       signing = {
         key = "/home/ignis/.ssh/id_ed25519.pub";
         signByDefault = true;
