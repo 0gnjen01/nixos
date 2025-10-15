@@ -25,7 +25,7 @@
     packages."x86_64-linux".default =
       (nvf.lib.neovimConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	modules = [ ./nvf.nix ];
+	modules = [ ./modules/nvf.nix ];
       }).neovim;
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -38,9 +38,7 @@
 	  home-manager = {
 	    useGlobalPkgs = true;
 	    useUserPackages = true;
-	    users.ignis = import [
-              .modules/home/home.nix
-            ];
+	    users.ignis = import ./modules/home/home.nix;
 	    extraSpecialArgs = {inherit inputs;};
             backupFileExtension = "backup";
 	  };

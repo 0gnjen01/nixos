@@ -20,7 +20,7 @@
 
   services = {
     kanshi = {
-      enable = true;
+      enable = false;
       settings = [
         { profile.name = "default";
           profile.outputs = [
@@ -39,22 +39,6 @@
         HDMI-A-1 = {
           path = "/home/ignis/Pictures/wallpaper.png";
         };
-      };
-    };
-    hypridle = {
-      enable = true;
-      settings = {
-        general = {
-          ignore_dbus_inhibit = true;
-          lock_cmd = "waylock";
-          };
-
-        listener = [
-          {
-          timeout = 300;
-          on-timeout = "loginctl lock-session";
-          }
-        ];
       };
     };
   };
@@ -105,6 +89,8 @@
 
     git = {
       enable = true;
+      userName = "0gnjen01";
+      userEmail = "ognjenk0l3@gmail.com";
       signing = {
         key = "/home/ignis/.ssh/id_ed25519.pub";
         signByDefault = true;

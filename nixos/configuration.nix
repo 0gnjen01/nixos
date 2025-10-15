@@ -84,6 +84,7 @@
     mangohud
     protonup
     rtorrent
+    xwayland-satellite
     inputs.self.packages.${pkgs.stdenv.system}.default 
   ];  
 
