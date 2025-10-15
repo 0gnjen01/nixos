@@ -3,20 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nvf.url = "github:notashelf/nvf";
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf,  ... } @inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
+  outputs = { self, nixpkgs, home-manager, nvf, niri,  ... } @inputs: {
 
     packages."x86_64-linux".default =
       (nvf.lib.neovimConfiguration {
@@ -29,12 +33,14 @@
       modules = [
         ./nixos/configuration.nix
 	nvf.nixosModules.default
-        home-manager.nixosModules.home-manager
-	{
+        niri.nixosModules.niri
+        home-manager.nixosModules.home-manager {
 	  home-manager = {
 	    useGlobalPkgs = true;
 	    useUserPackages = true;
-	    users.ignis = import ./home/home.nix;
+	    users.ignis = import [
+              .modules/home/home.nix
+            ];
 	    extraSpecialArgs = {inherit inputs;};
             backupFileExtension = "backup";
 	  };
