@@ -1,11 +1,11 @@
-{...}:
+{ pkgs, ...}:
 
 {
   programs.fuzzel = {
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=14";
+        font = "CozetteCrossedSevenVector:size=14";
         icons-enabled = false;
         prompt = "";
         dpi-aware = "yes";
@@ -15,18 +15,18 @@
         horizontal-pad = 20;
       };
       border = {
-        width = 1;
+        width = 3;
         radius = 0;
       };
       colors = {
         background = "1C1917FF";
-        border = "1C1917FF";
+        border = "B4BDC3FF";
         text = "B4BDC3FF";
-        match = "819B69FF";
+        match = "66A5ADFF";
         placeholder = "B77E64FF";
-        selection = "6099C0FF";
+        selection = "1C1917FF";
         selection-text = "B279A7FF";
-        selection-match = "66A5ADFF";
+        selection-match = "819B69FF";
       };
     };
   };

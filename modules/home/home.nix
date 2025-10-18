@@ -20,6 +20,7 @@
 
   imports = [
     ./packages.nix
+    ./fish.nix
     ./fastfetch.nix
     ./foot.nix
     ./fuzzel.nix

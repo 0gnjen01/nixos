@@ -85,11 +85,12 @@
     protonup
     rtorrent
     posy-cursors
+    cozette
     inputs.self.packages.${pkgs.stdenv.system}.default 
   ];  
 
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
+    cozette
   ];
 
   programs = {

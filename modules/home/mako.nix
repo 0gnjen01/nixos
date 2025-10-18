@@ -6,11 +6,11 @@
     settings = {
       layer = "overlay";
       background-color = "#1C1917";
-      font = "JetBrainsMono Nerd Font 12";
+      font = "CozetteCrossedSevenVector 14";
       text-color = "#B4BDC3";
-      progress-color = "#1C1917";
-      border-color = "#1C1917";
-      border-size = 1;
+      progress-color = "#66A5AD";
+      border-color = "#B4BDC3";
+      border-size = 3;
       border-radius = 0;
       margin = "12";
       padding = "0,5,10";

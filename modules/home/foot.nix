@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=12";
+        font = "CozetteCrossedSevenVector:size=13";
       };
       colors = {
         background = "1C1917";

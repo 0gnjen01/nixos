@@ -35,17 +35,13 @@
       enable = true;
       settings = {
         HDMI-A-1 = {
-          path = "/home/ignis/Pictures/pyramid.png";
+          path = "/home/ignis/Pictures/column.png";
         };
       };
     };
   };
 
   programs = {
-    fish = {
-      enable = true;
-    };
-
     vesktop = {
       enable = true;
     };
@@ -66,14 +62,6 @@
     };
 
     obs-studio = {
-      enable = true;
-    };
-
-    i3bar-river = {
-      enable = true;
-    };
-
-    i3status = {
       enable = true;
     };
 

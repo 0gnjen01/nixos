@@ -88,7 +88,7 @@
     extraConfig = ''
         # Background and border colors
         riverctl background-color 0x1C1917
-        riverctl border-color-focused 0x6099C0
+        riverctl border-color-focused 0xb4bdc3
         riverctl border-color-unfocused 0x1C1917
               
         # Default layout
