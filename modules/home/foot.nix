@@ -1,11 +1,13 @@
 { pkgs, ...}:
 
+
 {
   programs.foot = {
     enable = true;
     settings = {
       main = {
         font = "CozetteCrossedSevenVector:size=13";
+        pad = "2x2";
       };
       colors = {
         background = "1C1917";

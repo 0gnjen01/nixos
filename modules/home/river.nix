@@ -35,8 +35,8 @@
             "Super R" = "spawn fuzzel";
             "Super A" = "spawn firefox";
             "Super D" = "spawn vesktop";
-            "Super C" = " spawn 'grim -g \"\$(slurp)\" - | wl-copy' ";
-            "Super+Shift C" = " spawn 'grim - | wl-copy ' ";
+            "Super C" = "spawn 'grim -g \"$(slurp)\" - | wl-copy'";
+            "Super+Shift C" = "spawn 'grim - | wl-copy'";
             "Super+Shift M" = "exit";
             "Super J" = "focus-view next";
             "Super K" = "focus-view previous";
@@ -95,7 +95,6 @@
                 
           # Default layout
           riverctl default-layout rivertile      
-          rivertile -view-padding 0 -outer-padding 0 &
           riverctl attach-mode bottom
 
           # Tag mappings (1-9)
