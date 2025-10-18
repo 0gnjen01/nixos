@@ -25,8 +25,8 @@
     ./fuzzel.nix
     ./mako.nix
     ./river.nix
-    ./niri.nix
     ./firefox/firefox.nix
+    ./gtk.nix
   ];
 
 

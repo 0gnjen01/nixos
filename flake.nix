@@ -13,14 +13,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, niri,  ... } @inputs: {
+  outputs = { self, nixpkgs, home-manager, nvf, ... } @inputs: {
 
     packages."x86_64-linux".default =
       (nvf.lib.neovimConfiguration {
@@ -33,7 +28,6 @@
       modules = [
         ./nixos/configuration.nix
 	nvf.nixosModules.default
-        niri.nixosModules.niri
         home-manager.nixosModules.home-manager {
 	  home-manager = {
 	    useGlobalPkgs = true;

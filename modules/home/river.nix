@@ -6,7 +6,7 @@
       enable = true;
     };
     settings = {
-      border-width = 2;
+      border-width = 3;
       declare-mode = [
         "locked"
         "normal"
@@ -22,7 +22,7 @@
           "Super A" = "spawn firefox";
           "Super D" = "spawn vesktop";
           "Super C" = " spawn 'grim -g \"\$(slurp)\" - | wl-copy' ";
-          "Super+Shift C" = " spawn 'wf-recorder -g \"\$(slurp)\" ' ";
+          "Super+Shift C" = " spawn 'grim - | wl-copy ' ";
           # Super+Shift+E to exit river      
           "Super+Shift M" = "exit";
           # Super+J and Super+K to focus the next/previous view in the layout stack     
@@ -87,9 +87,9 @@
     };  
     extraConfig = ''
         # Background and border colors
-        riverctl background-color 0x002b36
-        riverctl border-color-focused 0x8DA3B9
-        riverctl border-color-unfocused 0x151515
+        riverctl background-color 0x1C1917
+        riverctl border-color-focused 0x6099C0
+        riverctl border-color-unfocused 0x1C1917
               
         # Default layout
         riverctl default-layout rivertile      
@@ -123,7 +123,6 @@
         # Media keys for both normal and locked modes
         for mode in normal locked
         do
-          riverctl map $mode None XF86Eject spawn 'eject -T'
           riverctl map $mode None XF86AudioRaiseVolume spawn 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'
           riverctl map $mode None XF86AudioLowerVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'
           riverctl map $mode None XF86AudioMute spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
@@ -132,6 +131,14 @@
           riverctl map $mode None XF86AudioPrev spawn 'playerctl previous'
           riverctl map $mode None XF86AudioNext spawn 'playerctl next'
         done
+        # Set keyboard repeat rate
+        riverctl set-repeat 50 300
+
+        # Make all views with an app-id that starts with "float" and title "foo" start floating.
+        riverctl rule-add -app-id 'float*' -title 'foo' float
+
+        # Make all views with app-id "bar" and any title use client-side decorations
+        riverctl rule-add -app-id "bar" csd
     '';
   };
 }

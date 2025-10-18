@@ -5,13 +5,11 @@
 
     cava
     
-    waylock
     grim
     slurp
 
     wl-clipboard-rs
     wl-clip-persist
-    wf-recorder
 
     mindustry
     prismlauncher
@@ -20,7 +18,7 @@
 
   services = {
     kanshi = {
-      enable = false;
+      enable = true;
       settings = [
         { profile.name = "default";
           profile.outputs = [
@@ -37,7 +35,7 @@
       enable = true;
       settings = {
         HDMI-A-1 = {
-          path = "/home/ignis/Pictures/wallpaper.png";
+          path = "/home/ignis/Pictures/pyramid.png";
         };
       };
     };
@@ -67,11 +65,20 @@
       enable = true;
     };
 
+    obs-studio = {
+      enable = true;
+    };
+
+    i3bar-river = {
+      enable = true;
+    };
+
+    i3status = {
+      enable = true;
+    };
+
     yazi = {
       enable = true;
-      plugins = {
-        inherit (pkgs.yaziPlugins) sudo git lazygit chmod recycle-bin wl-clipboard full-border;
-      };
     };
 
     feh = {

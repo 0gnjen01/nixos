@@ -2,7 +2,6 @@
 
 {
   vim = {
-
     statusline.lualine.enable = true;
 
     telescope.enable = true;
@@ -24,12 +23,14 @@
     };
 
     extraPlugins = {
-      lackluster = {
-        package = pkgs.vimPlugins.lackluster-nvim;
+      zenbones = {
+        package = pkgs.vimPlugins.zenbones-nvim;
         setup = ''
-          require('lackluster').setup{}
-          vim.cmd.colorscheme("lackluster-hack")
+          vim.cmd.colorscheme("zenbones")
         '';
+      };
+      lush = {
+        package = pkgs.vimPlugins.lush-nvim;
       };
     };
   };

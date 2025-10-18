@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Terminess Nerd Font Mono:size=14";
+        font = "JetBrainsMono Nerd Font:size=14";
         icons-enabled = false;
         prompt = "";
         dpi-aware = "yes";
@@ -15,18 +15,18 @@
         horizontal-pad = 20;
       };
       border = {
-        width = 0;
+        width = 1;
         radius = 0;
       };
       colors = {
-        background = "151515FF";
-        border = "9ECE6AFF";
-        text = "E8E3E3FF";
-        match = "A988B0FF";
-        placeholder = "9ECE6AFF";
-        selection = "151515FF";
-        selection-text = "8DA3B9FF";
-        selection-match = "8C977DFF";
+        background = "1C1917FF";
+        border = "1C1917FF";
+        text = "B4BDC3FF";
+        match = "819B69FF";
+        placeholder = "B77E64FF";
+        selection = "6099C0FF";
+        selection-text = "B279A7FF";
+        selection-match = "66A5ADFF";
       };
     };
   };

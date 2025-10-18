@@ -84,13 +84,12 @@
     mangohud
     protonup
     rtorrent
-    xwayland-satellite
+    posy-cursors
     inputs.self.packages.${pkgs.stdenv.system}.default 
   ];  
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    nerd-fonts.terminess-ttf
   ];
 
   programs = {
@@ -105,15 +104,11 @@
       enable = true;
     };
 
-    niri = {
-      enable = true;
-    };
-
     steam = {
       enable = true;
       gamescopeSession.enable = true;
     };
-
+    
     gamemode = {
       enable = true;
     };
