@@ -7,7 +7,7 @@
     settings = {
       main = {
         font = "CozetteCrossedSevenVector:size=13";
-        pad = "2x2";
+        pad = "10x10";
       };
       colors = {
         background = "1C1917";

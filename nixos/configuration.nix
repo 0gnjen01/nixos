@@ -119,7 +119,7 @@
           output_name = "HDMI-A-1";
           chooser_type = "simple";
           chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
-          };
+        };
       };
       config = {
         common = {

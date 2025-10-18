@@ -79,7 +79,7 @@
             };
          };
 
-        xcursor-theme = "Posy's Cursor 12";  
+        xcursor-theme = "Posy_Cursor";  
         set-repeat = "50 300";
 
         spawn = [
@@ -88,40 +88,31 @@
         ];
       };  
       extraConfig = ''
-          # Background and border colors
           riverctl background-color 0x1C1917
           riverctl border-color-focused 0xb4bdc3
           riverctl border-color-unfocused 0x1C1917
                 
-          # Default layout
           riverctl default-layout rivertile      
+          rivertile -view-padding 0 -outer-padding 0 &
           riverctl attach-mode bottom
 
-          # Tag mappings (1-9)
           for i in $(seq 1 9)
           do
               tags=$((1 << ($i - 1)))
 
-              # Super+[1-9] to focus tag [0-8]
               riverctl map normal Super $i set-focused-tags $tags
 
-              # Super+Shift+[1-9] to tag focused view with tag [0-8]
               riverctl map normal Super+Shift $i set-view-tags $tags
 
-              # Super+Control+[1-9] to toggle focus of tag [0-8]
               riverctl map normal Super+Control $i toggle-focused-tags $tags
 
-              # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
               riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
           done
 
-          # Super+0 to focus all tags
-          # Super+Shift+0 to tag focused view with all tags
           all_tags=$(((1 << 32) - 1))
           riverctl map normal Super 0 set-focused-tags $all_tags
           riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
-          # Media keys for both normal and locked modes
           for mode in normal locked
           do
             riverctl map $mode None XF86AudioRaiseVolume spawn 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'
