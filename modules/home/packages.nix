@@ -2,14 +2,7 @@
 
 {
   home.packages = with pkgs; [
-
     cava
-    
-    grim
-    slurp
-
-    wl-clipboard-rs
-    wl-clip-persist
 
     mindustry
     prismlauncher

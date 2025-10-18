@@ -20,12 +20,10 @@
 
   imports = [
     ./packages.nix
-    ./fish.nix
     ./fastfetch.nix
     ./foot.nix
     ./fuzzel.nix
     ./mako.nix
-    ./river.nix
     ./firefox/firefox.nix
     ./gtk.nix
   ];

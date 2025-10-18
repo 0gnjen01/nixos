@@ -9,6 +9,9 @@
       ./hardware-configuration.nix
       ./nvidia.nix
       ./virtualization.nix
+      
+      ../modules/home/fish.nix
+      ../modules/home/river.nix
     ];
 
   # Bootloader.
@@ -67,9 +70,6 @@
     isNormalUser = true;
     description = "nixos";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-    shell = pkgs.fish;
-    ignoreShellProgramCheck = true;
   };
 
   # Allow unfree packages
@@ -84,8 +84,6 @@
     mangohud
     protonup
     rtorrent
-    posy-cursors
-    cozette
     inputs.self.packages.${pkgs.stdenv.system}.default 
   ];  
 
@@ -99,10 +97,6 @@
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/ignis/flake"; # sets NH_OS_FLAKE variable for you
-    };
-
-    river-classic = {
-      enable = true;
     };
 
     steam = {
@@ -129,9 +123,6 @@
       };
       config = {
         common = {
-          default = ["wlr"];
-        };
-        river = {
           default = ["wlr"];
         };
       };
