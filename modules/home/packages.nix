@@ -1,6 +1,9 @@
-{ lib, inputs, pkgs, ... }:
-
 {
+  lib,
+  inputs,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     cava
 
@@ -13,7 +16,8 @@
     kanshi = {
       enable = true;
       settings = [
-        { profile.name = "default";
+        {
+          profile.name = "default";
           profile.outputs = [
             {
               criteria = "HDMI-A-1";
@@ -52,6 +56,10 @@
 
     zathura = {
       enable = true;
+      options = {
+        default-bg = "#1C1917";
+        default-fg = "#B4BDC3";
+      };
     };
 
     obs-studio = {
@@ -86,7 +94,7 @@
       extraConfig = {
         gpg.format = "ssh";
       };
-    }; 
+    };
 
     lazygit = {
       enable = true;

@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.fastfetch = {
     enable = true;
     settings = {
       logo.source = "nixos_small";
       display = {
-        constants = [ "██ " ];
-      };      
+        constants = ["██ "];
+      };
       modules = [
         {
           key = "{$1}Distro";

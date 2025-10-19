@@ -1,13 +1,10 @@
-{ pkgs, ...}:
-
-
-{
+{pkgs, ...}: {
   programs.foot = {
     enable = true;
     settings = {
       main = {
-        font = "CozetteCrossedSevenVector:size=13";
-        pad = "10x10";
+        font = "IosevkaTerm Nerd Font:style=Regular:size=13";
+        pad = "15x15";
       };
       colors = {
         background = "1C1917";

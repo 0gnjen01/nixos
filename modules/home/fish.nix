@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     grc
   ];
@@ -20,8 +18,14 @@
         set fish_greeting # Disable greeting
       '';
       plugins = [
-        { name = "grc"; src = pkgs.fishPlugins.grc.src; }
-        { name = "done"; src = pkgs.fishPlugins.done.src; }
+        {
+          name = "grc";
+          src = pkgs.fishPlugins.grc.src;
+        }
+        {
+          name = "done";
+          src = pkgs.fishPlugins.done.src;
+        }
         {
           name = "z";
           src = pkgs.fetchFromGitHub {
@@ -35,4 +39,3 @@
     };
   };
 }
- 

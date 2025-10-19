@@ -1,18 +1,22 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, inputs,  ... }:
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./nvidia.nix
-      ./virtualization.nix
-      
-      ../modules/home/fish.nix
-      ../modules/home/river.nix
-    ];
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./nvidia.nix
+    ./virtualization.nix
+
+    ../modules/home/fish.nix
+    ../modules/home/river.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -24,7 +28,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -50,26 +54,26 @@
   };
 
   services = {
-      pipewire = {
-        enable = true;
-        wireplumber.enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-      };
+    pipewire = {
+      enable = true;
+      wireplumber.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
 
-      playerctld.enable = true;
+    playerctld.enable = true;
 
-      displayManager.ly.enable = true;
+    displayManager.ly.enable = true;
 
-      flatpak.enable = true;
+    flatpak.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ignis = {
     isNormalUser = true;
     description = "nixos";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   # Allow unfree packages
@@ -78,17 +82,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     libnotify
     mangohud
     protonup
     rtorrent
-    inputs.self.packages.${pkgs.stdenv.system}.default 
-  ];  
+    inputs.self.packages.${pkgs.stdenv.system}.default
+  ];
 
   fonts.packages = with pkgs; [
     cozette
+    nerd-fonts.iosevka-term
   ];
 
   programs = {
@@ -103,7 +108,7 @@
       enable = true;
       gamescopeSession.enable = true;
     };
-    
+
     gamemode = {
       enable = true;
     };
@@ -155,5 +160,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

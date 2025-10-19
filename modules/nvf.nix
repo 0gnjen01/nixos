@@ -1,6 +1,8 @@
-{ pkgs, lib, ...}:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   vim = {
     statusline.lualine.enable = true;
 
@@ -14,7 +16,7 @@
         enable = true;
         treesitter.enable = true;
         format.enable = true;
-      };   
+      };
     };
 
     options = {
