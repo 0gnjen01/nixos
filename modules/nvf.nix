@@ -24,6 +24,12 @@
       shiftwidth = 2;
     };
 
+    clipboard = {
+      registers = "unnamedplus";
+      providers.wl-copy.enable = true;
+    };
+
+
     extraPlugins = {
       zenbones = {
         package = pkgs.vimPlugins.zenbones-nvim;
