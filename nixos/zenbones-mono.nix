@@ -1,16 +1,16 @@
 {
   lib,
-  stdenvNoCC,
-  fetchFromGithub,
+  stdenv,
+  fetchFromGitHub,
 }:
 
 stdenv.mkDerivation rec {
   pname = "zenbones-mono";
   version = "2.400";
 
-  src = fetchFromGithub {
+  src = fetchFromGitHub {
     owner = "mcchrish";
-    repo = pname;
+    repo = "${pname}";
     rev = "v${version}";
     sha256 = "104kid04mc526g9xaa9716b2bsrjmx7jgxi2h5731h6060b8ln4c";
   };
