@@ -94,6 +94,7 @@
   fonts.packages = with pkgs; [
     cozette
     nerd-fonts.iosevka-term
+    (callPackage ./zenbones-mono.nix {})
   ];
 
   programs = {
