@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "IosevkaTerm Nerd Font:style=Regular:size=13";
+        font = "IosevkaTermNerdFontMono-Regular:size=13";
         pad = "15x15";
       };
       colors = {
