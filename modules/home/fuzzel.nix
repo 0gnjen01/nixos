@@ -3,17 +3,17 @@
     enable = true;
     settings = {
       main = {
-        font = "CozetteCrossedSevenVector:size=14";
+        font = "TX02 Nerd Font Mono:style=Regular:size=12";
         icons-enabled = false;
         prompt = "";
         dpi-aware = "yes";
         use-bold = false;
         inner-pad = 5;
-        vertical-pad = 20;
-        horizontal-pad = 20;
+        vertical-pad = 15;
+        horizontal-pad = 15;
       };
       border = {
-        width = 3;
+        width = 2;
         radius = 0;
       };
       colors = {

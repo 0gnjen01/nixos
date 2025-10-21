@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = " TX02 Nerd Font Mono:style=Regular:size=13";
+        font = "TX02 Nerd Font Mono:style=Regular:size=13";
         pad = "15x15";
       };
       colors = {

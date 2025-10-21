@@ -4,7 +4,7 @@
     settings = {
       layer = "overlay";
       background-color = "#1C1917";
-      font = "CozetteCrossedSevenVector 12";
+      font = "TX02 Nerd Font Mono 12";
       text-color = "#B4BDC3";
       progress-color = "#66A5AD";
       border-color = "#B4BDC3";
