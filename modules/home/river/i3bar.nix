@@ -1,9 +1,5 @@
 { pkgs, ... }:
-
-environment.systemPackages = with pkgs; [
-  i3status-rs
-];
-home-manager.users.ignis = {
+{
   programs.i3bar-river = {
     enable = true;
     settings = {
@@ -19,4 +15,7 @@ home-manager.users.ignis = {
         max_tag = 0;
     };
   };
-};
+  i3status = {
+    enable = true;
+  };
+}

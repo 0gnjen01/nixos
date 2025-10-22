@@ -16,7 +16,6 @@
 
     ../modules/home/fish.nix
     ../modules/home/river/river.nix
-    ../modules/home/river/i3bar.nix
   ];
 
   # Bootloader.

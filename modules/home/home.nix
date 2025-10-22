@@ -28,6 +28,7 @@
     ./mako.nix
     ./firefox/firefox.nix
     ./gtk.nix
+    ./river/i3bar.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
