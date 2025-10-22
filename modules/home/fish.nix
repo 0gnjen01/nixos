@@ -14,6 +14,9 @@
   home-manager.users.ignis = {
     programs.fish = {
       enable = true;
+      shellAliases = {
+        "dict" = "dict.cc.py";
+      };
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
       '';

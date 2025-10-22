@@ -91,6 +91,7 @@
         spawn = [
           "kanshi"
           "wpaperd"
+          "i3bar-river"
         ];
       };
       extraConfig = ''
