@@ -3,19 +3,20 @@
   programs.i3bar-river = {
     enable = true;
     settings = {
-      background = "#1C1917";
-      color = "#B4BDC3";
+      background = "#1C1917FF";
+      color = "#B4BDC3FF";
       font = "TX02 Nerd Font Mono 10";
       height = 24;
       margin_bottom = 0;
       margin_left = 0;
       margin_top = 0;
-      separator = "#9a8a62ff";
+      separator = "#B4BDC3FF"";
       "wm.river" = {
         max_tag = 0;
+      };
     };
   };
-  i3status = {
+  programs.i3status = {
     enable = true;
   };
 }
