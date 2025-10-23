@@ -10,7 +10,7 @@
       margin_bottom = 0;
       margin_left = 0;
       margin_top = 0;
-      separator = "#B4BDC3FF"";
+      separator = "#B4BDC3FF";
       "wm.river" = {
         max_tag = 0;
       };
