@@ -92,24 +92,9 @@
     inputs.self.packages.${pkgs.stdenv.system}.default
   ];
 
-  fonts = {
-    packages = with pkgs; [
-      (pkgs.stdenvNoCC.mkDerivation {
-        name = "berkeley-mono";
-        src = fetchurl {
-          url = "https://codeberg.org/Ogromny/kiss_repo/archive/master:berkeley-mono/files.tar.gz";
-          sha256 = "02b48rb6260plp3awn7pvcfrz83bcrb419yzlcbw51dl4sm7fsd6";
-        };
-        installPhase = ''
-          runHook preInstall
-
-          install -Dm644 *.ttf -t $out/share/fonts/truetype
-
-          runHook postInstall
-        '';
-      })
-    ];
-  };
+  fonts.packages = with pkgs; [
+    (callPackage ./zenbones-mono.nix {})
+  ];
 
   programs = {
     nh = {
