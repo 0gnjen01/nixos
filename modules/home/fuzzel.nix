@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "ZenBones Brainy:style=Regular:size=13";
+        font = "0xProto Nerd Font Mono:style=Regular:size=13";
         icons-enabled = false;
         prompt = "";
         dpi-aware = "yes";

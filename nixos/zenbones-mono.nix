@@ -65,13 +65,11 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   meta = {
-    # idk about description
-    description = "Comfy. Condensed. Coding. A custom Iosevka build drawing inspirations from various programming typefaces.";
+    description = "Comfy. Condensed. Coding. A custom Iosevka build drawing inspirations from various programming typefaces";
     homepage = "https://github.com/zenbones-theme/zenbones-mono";
     license = lib.licenses.ofl;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [
-      #your future name here
     ];
   };
 })

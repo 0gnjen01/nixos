@@ -86,14 +86,12 @@
     wget
     libnotify
     dict-cc-py
-    mangohud
-    protonup
     rtorrent
     inputs.self.packages.${pkgs.stdenv.system}.default
   ];
 
   fonts.packages = with pkgs; [
-    (callPackage ./zenbones-mono.nix {})
+    nerd-fonts._0xproto
   ];
 
   programs = {
@@ -102,6 +100,14 @@
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/ignis/flake"; # sets NH_OS_FLAKE variable for you
+    };
+
+    thunar = {
+      enable = true;
+    };
+
+    thunderbird = {
+      enable = true;
     };
 
     steam = {

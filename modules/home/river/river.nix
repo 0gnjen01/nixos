@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+
   xdg.portal.config.river = {
     default = ["wlr"];
   };
@@ -12,6 +13,7 @@
       wl-clipboard-rs
       wl-clip-persist
 
+      creek
       posy-cursors
     ];
   };
@@ -91,7 +93,8 @@
         spawn = [
           "kanshi"
           "wpaperd"
-          "i3bar-river"
+          "( while date; do sleep 1; done ) | creek -fn ''0xProto Nerd Font Mono:style=Regular:siz
+e=13'' -hg 25 -nf 0xB4BDC3 -nb 0x1C1917 -ff 0x1C1917 -fb 0x6099C0"
         ];
       };
       extraConfig = ''

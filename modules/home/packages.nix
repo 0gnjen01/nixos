@@ -32,7 +32,7 @@
       enable = true;
       settings = {
         HDMI-A-1 = {
-          path = "/home/ignis/Pictures/column.png";
+          path = "/home/ignis/Pictures/wallpaper.png";
         };
       };
     };
