@@ -70,10 +70,6 @@
       enable = true;
     };
 
-    feh = {
-      enable = true;
-    };
-
     mpv = {
       enable = true;
     };

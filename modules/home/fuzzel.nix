@@ -3,13 +3,13 @@
     enable = true;
     settings = {
       main = {
-        font = "0xProto Nerd Font Mono:style=Regular:size=13";
+        font = "0xProto Nerd Font Mono:style=Regular:size=12";
         icons-enabled = false;
         prompt = "";
         dpi-aware = "yes";
         use-bold = false;
         inner-pad = 5;
-        vertical-pad = 15;
+        vertical-pad = 20;
         horizontal-pad = 15;
       };
       border = {

@@ -16,6 +16,7 @@
 
     ../modules/home/fish.nix
     ../modules/home/river/river.nix
+    ../modules/home/foot.nix
   ];
 
   # Bootloader.
@@ -87,6 +88,7 @@
     libnotify
     dict-cc-py
     rtorrent
+    swayimg
     inputs.self.packages.${pkgs.stdenv.system}.default
   ];
 
