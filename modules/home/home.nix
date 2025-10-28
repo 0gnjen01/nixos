@@ -25,7 +25,6 @@
     ./fastfetch.nix
     ./fuzzel.nix
     ./mako.nix
-    ./firefox/firefox.nix
     ./gtk.nix
   ];
 

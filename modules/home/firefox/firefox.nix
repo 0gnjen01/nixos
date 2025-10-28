@@ -1,29 +1,63 @@
 {
+  pkgs,
   ...
-}: {
-  programs.firefox = {
-    enable = true;
-    policies = {
-      ExtensionSettings = {
-        # uBlock Origin:
-        "uBlock0@raymondhill.net" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-          installation_mode = "force_installed";
+}:
+{
+  environment.systemPackages = with pkgs; [
+    searxng
+  ];
+  home-manager.users.ignis = {
+    programs.firefox = {
+      enable = true;
+      languagePacks = [ "en-US" "de" ];
+      policies = {
+        DisableTelemetry = true;
+        DisableFirefoxStudies = true;
+        EnableTrackingProtection = {
+          Value= true;
+          Locked = true;
+          Cryptomining = true;
+          Fingerprinting = true;
         };
-        # I still don't care about cookies
-        "idcac-pub@guus.ninja" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
-          installation_mode = "force_installed";
+        DisablePocket = true;
+        DisableFirefoxAccounts = true;
+        DisableAccounts = true;
+        DisableFirefoxScreenshots = true;
+        OverrideFirstRunPage = "";
+        OverridePostUpdatePage = "";
+        DontCheckDefaultBrowser = true;
+        DisplayBookmarksToolbar = "never"; # alternatives: "always" or "newtab"
+        DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
+        SearchBar = "unified"; # alternative: "separate"
+
+        ExtensionSettings = {
+          # uBlock Origin:
+          "uBlock0@raymondhill.net" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            installation_mode = "force_installed";
+          };
+          # I still don't care about cookies
+          "idcac-pub@guus.ninja" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
+            installation_mode = "force_installed";
+          };
         };
       };
-    };
-    profiles.default = {
-      isDefault = true;
-      path = "/home/ignis/.mozilla/firefox/default/";
-      settings = {
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      profiles.default = {
+        id = 0;
+        name = "default";
+        isDefault = true;
+        path = "/home/ignis/.mozilla/firefox/default/";
+        search = {
+          force = true;
+          default = "SearXNG";
+          privateDefault = "SearXNG";
+        };
+        settings = {
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        };
+        userChrome = (builtins.readFile ./userChrome.css);
       };
-      userChrome = (builtins.readFile ./userChrome.css);
     };
   };
 }

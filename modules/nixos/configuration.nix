@@ -14,9 +14,10 @@
     ./nvidia.nix
     ./virtualization.nix
 
-    ../modules/home/fish.nix
-    ../modules/home/river/river.nix
-    ../modules/home/foot.nix
+    ../home/fish.nix
+    ../home/river/river.nix
+    ../home/foot.nix
+    ../home/firefox/firefox.nix
   ];
 
   # Bootloader.
