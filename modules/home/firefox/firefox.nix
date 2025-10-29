@@ -41,13 +41,17 @@
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
             installation_mode = "force_installed";
           };
+          # ProtonPass
+          "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
+            installation_mode = "force_installed";
+          };
         };
       };
       profiles.default = {
-        id = 0;
         name = "default";
+        path = "default";
         isDefault = true;
-        path = "/home/ignis/.mozilla/firefox/default/";
         search = {
           force = true;
           default = "SearXNG";

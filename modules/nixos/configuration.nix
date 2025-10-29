@@ -21,8 +21,18 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      windows = {
+        "11-pro" = {
+          title = "Windows 11 Pro";
+          efiDeviceHandle = "HD0b";
+        };
+      };
+    };
+    efi.canTouchEfiVariables = true;
+  };
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
