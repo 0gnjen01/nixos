@@ -61,6 +61,7 @@
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
         userChrome = (builtins.readFile ./userChrome.css);
+        extraConfig = (builtins.readFile ./user.js);
       };
     };
   };
