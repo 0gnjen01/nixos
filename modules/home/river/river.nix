@@ -1,9 +1,4 @@
 {pkgs, ...}: {
-
-  xdg.portal.config.river = {
-    default = ["wlr"];
-  };
-
   programs.river-classic = {
     enable = true;
     extraPackages = with pkgs; [

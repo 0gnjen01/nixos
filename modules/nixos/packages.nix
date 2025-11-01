@@ -1,13 +1,21 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
     libnotify
     dict-cc-py
+
     rtorrent
     swayimg
+    nemo
+
+    prismlauncher
+    krita
     inputs.self.packages.${pkgs.stdenv.system}.default
   ];
 
@@ -44,10 +52,6 @@
     };
 
     thunar = {
-      enable = true;
-    };
-
-    thunderbird = {
       enable = true;
     };
 

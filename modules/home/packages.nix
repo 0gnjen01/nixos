@@ -1,15 +1,8 @@
 {
-  lib,
-  inputs,
   pkgs,
   ...
 }: {
   home.packages = with pkgs; [
-    cava
-
-    mindustry
-    prismlauncher
-    krita
   ];
 
   services = {

@@ -13,7 +13,7 @@
     ./hardware-configuration.nix
     ./packages.nix
     ./nvidia.nix
-    ./virtualization.nix
+    ./xdg.nix
 
     ../home/fish.nix
     ../home/river/river.nix
@@ -39,7 +39,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -68,28 +67,6 @@
     description = "nixos";
     extraGroups = ["networkmanager" "wheel"];
   };
-
-  xdg = {
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      wlr = {
-        enable = true;
-        settings.screencast = {
-          output_name = "HDMI-A-1";
-          chooser_type = "simple";
-          chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
-        };
-      };
-      config = {
-        common = {
-          default = ["wlr"];
-        };
-      };
-    };
-  };
-
-  # Allow unfree packages
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

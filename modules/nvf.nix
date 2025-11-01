@@ -1,19 +1,21 @@
 {pkgs, ...}: {
   vim = {
-    statusline.lualine.enable = true;
+    autopairs.nvim-autopairs.enable = true;
 
-    telescope.enable = true;
+    statusline.lualine.enable = true;
 
     autocomplete.blink-cmp.enable = true;
 
     ui.colorizer = {
       enable = true;
       setupOpts = {
-        "*" = {
-          mode = "background";
-          RGB = true;
-          RRGGBB = true;
-          RRGGBBAA = true;
+        filetypes = {
+          "*" = {
+            mode = "background";
+            tailwind = true;
+            names = true;
+            css = true;
+          };
         };
       };
     };
@@ -28,12 +30,8 @@
       providers.wl-copy.enable = true;
     };
 
-    lsp = {
-      enable = true;
-      formatOnSave = true;
-    };
-
     languages = {
+      enableTreesitter = true;
       nix = {
         enable = true;
         extraDiagnostics.enable = true;
@@ -42,7 +40,19 @@
           type = "alejandra";
         };
       };
-      enableTreesitter = true;
+    };
+
+    git = {
+      enable = true;
+      git-conflict.enable = true;
+      gitsigns.enable = true;
+    };
+
+    terminal = {
+      toggleterm = {
+        enable = true;
+        lazygit.enable = true;
+      };
     };
 
     extraPlugins = {
