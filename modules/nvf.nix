@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   vim = {
     statusline.lualine.enable = true;
 
@@ -10,12 +6,15 @@
 
     autocomplete.blink-cmp.enable = true;
 
-    languages = {
-      enableTreesitter = true;
-      nix = {
-        enable = true;
-        treesitter.enable = true;
-        format.enable = true;
+    ui.colorizer = {
+      enable = true;
+      setupOpts = {
+        "*" = {
+          mode = "background";
+          RGB = true;
+          RRGGBB = true;
+          RRGGBBAA = true;
+        };
       };
     };
 
@@ -29,6 +28,22 @@
       providers.wl-copy.enable = true;
     };
 
+    lsp = {
+      enable = true;
+      formatOnSave = true;
+    };
+
+    languages = {
+      nix = {
+        enable = true;
+        extraDiagnostics.enable = true;
+        format = {
+          enable = true;
+          type = "alejandra";
+        };
+      };
+      enableTreesitter = true;
+    };
 
     extraPlugins = {
       zenbones = {

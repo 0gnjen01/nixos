@@ -9,18 +9,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, hjem, ... } @inputs: {
+  outputs = { self, nixpkgs, nvf, home-manager,... } @inputs: {
 
     packages."x86_64-linux".default =
       (nvf.lib.neovimConfiguration {
@@ -33,7 +28,6 @@
       modules = [
         ./modules/nixos/configuration.nix
 	nvf.nixosModules.default
-        hjem.nixosModules.default
         home-manager.nixosModules.home-manager {
 	  home-manager = {
 	    useGlobalPkgs = true;
