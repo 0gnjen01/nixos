@@ -15,28 +15,34 @@
     };
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager,... } @inputs: {
-
+  outputs = {
+    self,
+    nixpkgs,
+    nvf,
+    home-manager,
+    ...
+  } @ inputs: {
     packages."x86_64-linux".default =
       (nvf.lib.neovimConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	modules = [ ./modules/nvf.nix ];
+        modules = [./modules/nvf.nix];
       }).neovim;
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./modules/nixos/configuration.nix
-	nvf.nixosModules.default
-        home-manager.nixosModules.home-manager {
-	  home-manager = {
-	    useGlobalPkgs = true;
-	    useUserPackages = true;
-	    users.ignis = import ./modules/home/home.nix;
-	    extraSpecialArgs = {inherit inputs;};
+        nvf.nixosModules.default
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.ignis = import ./modules/home/home.nix;
+            extraSpecialArgs = {inherit inputs;};
             backupFileExtension = "backup";
-	  };
-	}
+          };
+        }
       ];
     };
   };

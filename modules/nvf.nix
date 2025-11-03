@@ -30,6 +30,12 @@
       providers.wl-copy.enable = true;
     };
 
+    lsp = {
+      enable = true;
+      formatOnSave = true;
+      inlayHints.enable = true;
+    };
+
     languages = {
       enableTreesitter = true;
       nix = {

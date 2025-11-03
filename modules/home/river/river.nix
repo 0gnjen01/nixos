@@ -88,11 +88,12 @@
         spawn = [
           "kanshi"
           "wpaperd"
-          "''sh -c 'while true; do date; sleep 1; done | creek -fn \"0xProto Nerd Font Mono:style=Regular:size=13\" -hg 25 -nf 0xB4BDC3 -nb 0x1C1917 -ff 0x1C1917 -fb 0x6099C0'''"
         ];
       };
       extraConfig = ''
-        riverctl spawn "sh -c 'while true; do date; sleep 1; done | creek -fn \"0xProto Nerd Font Mono:style=Regular:size=13\" -hg 25 -nf 0xB4BDC3 -nb 0x1C1917 -ff 0x1C1917 -fb 0x6099C0'"
+        riverctl spawn "sh -c 'while true; do date; sleep 1; done | creek -fn \"0xproto nerd font mono:style=regular:size=13\" -hg 25 -nf 0xb4bdc3 -nb 0x1c1917 -ff 0x1c1917 -fb 0x6099c0'"
+
+        riverctl keyboard-layout -options "grp:ctrl_space_toggle" "us,de"
 
         riverctl background-color 0x1C1917
         riverctl border-color-focused 0xb4bdc3
