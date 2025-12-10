@@ -9,10 +9,15 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     libnotify
     dict-cc-py
+    python3
 
     rtorrent
     swayimg
     nemo
+
+    pulseaudio
+    pavucontrol
+    easyeffects
 
     prismlauncher
     krita
@@ -51,14 +56,14 @@
       flake = "/home/ignis/flake"; # sets NH_OS_FLAKE variable for you
     };
 
-    thunar = {
-      enable = true;
-    };
+    adb.enable = true;
 
     steam = {
       enable = true;
       gamescopeSession.enable = true;
     };
+
+    thunderbird.enable = true;
 
     gamemode = {
       enable = true;

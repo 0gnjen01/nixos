@@ -52,9 +52,12 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us,de";
-    variant = "";
+  services.xserver = {
+    wacom.enable = true;
+    xkb = {
+      layout = "us,de";
+      variant = "";
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -63,6 +66,8 @@
     description = "nixos";
     extraGroups = ["networkmanager" "wheel"];
   };
+
+  documentation.man.generateCaches = false;
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
