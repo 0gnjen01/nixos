@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +30,7 @@
     nixpkgs,
     nvf,
     home-manager,
+    niri,
     ...
   } @ inputs: {
     packages."x86_64-linux".default =
@@ -37,9 +43,10 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./modules/nixos/configuration.nix
-        ./modules/home/noctalia.nix
+        ./modules/nixos/noctalia.nix
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
+        niri.nixosModules.niri
         {
           home-manager = {
             useGlobalPkgs = true;
