@@ -11,9 +11,13 @@
     ;
 in {
   nixpkgs.overlays = [inputs.niri.overlays.niri];
+  imports = [inputs.niri.homeModules.niri];
 
   environment.systemPackages = with pkgs; [
-    xwayland-satellite
+    wl-clipboard
+    wlr-randr
+    vulkanPackages_latest.vulkan-tools
+    xwayland-satellite-unstable
   ];
 
   environment.variables = {
@@ -27,7 +31,6 @@ in {
     config = {
       niri."org.freedesktop.impl.portal.FileChooser" = "gtk";
       niri.default = "gnome";
-      obs.default = "gnome";
     };
   };
 
@@ -52,9 +55,12 @@ in {
         outputs = {
           "HDMI-A-1" = {
             enable = true;
-            mode.width = 1920;
-            mode.height = 1080;
-            mode.refresh = 144.0;
+            variable-refresh-rate = true;
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 144.0;
+            };
           };
         };
 

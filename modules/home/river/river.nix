@@ -8,7 +8,6 @@
       wl-clipboard-rs
       wl-clip-persist
 
-      creek
       posy-cursors
     ];
   };
@@ -91,7 +90,6 @@
         ];
       };
       extraConfig = ''
-        riverctl spawn "sh -c 'while true; do date; sleep 1; done | creek -fn \"0xproto nerd font mono:style=regular:size=13\" -hg 25 -nf 0xb4bdc3 -nb 0x1c1917 -ff 0x1c1917 -fb 0x6099c0'"
 
         riverctl keyboard-layout -options "grp:ctrl_space_toggle" "us,de"
 
