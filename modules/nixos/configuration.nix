@@ -19,6 +19,7 @@
     ../home/river/river.nix
     ../home/foot.nix
     ../home/firefox/firefox.nix
+    ../home/niri.nix
   ];
 
   # Bootloader.

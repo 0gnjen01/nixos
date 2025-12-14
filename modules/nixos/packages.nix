@@ -14,7 +14,6 @@
     rtorrent
     swayimg
     nemo
-    xwayland-satellite
 
     pulseaudio
     pavucontrol
