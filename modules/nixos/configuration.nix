@@ -14,6 +14,7 @@
     ./packages.nix
     ./nvidia.nix
     ./xdg.nix
+    ./niri.nix
 
     ../home/fish.nix
     ../home/river/river.nix

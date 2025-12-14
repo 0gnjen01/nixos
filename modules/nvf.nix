@@ -43,7 +43,7 @@
         extraDiagnostics.enable = true;
         format = {
           enable = true;
-          type = "alejandra";
+          type = ["alejandra"];
         };
       };
     };

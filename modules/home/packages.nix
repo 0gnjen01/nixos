@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
   ];
 
@@ -95,12 +92,7 @@
         color_theme = "TTY";
       };
     };
-
-    translate-shell = {
-      enable = true;
-    };
   };
-
   xdg = {
     mimeApps.enable = true;
   };
