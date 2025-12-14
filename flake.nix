@@ -30,7 +30,6 @@
     nixpkgs,
     nvf,
     home-manager,
-    niri,
     ...
   } @ inputs: {
     packages."x86_64-linux".default =
@@ -46,10 +45,9 @@
         ./modules/nixos/noctalia.nix
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
-        niri.nixosModules.niri
         {
           home-manager = {
-            useGlobalPkgs = true;
+            useGlobalPkgs = false;
             useUserPackages = true;
             users.ignis = import ./modules/home/home.nix;
             extraSpecialArgs = {inherit inputs;};
